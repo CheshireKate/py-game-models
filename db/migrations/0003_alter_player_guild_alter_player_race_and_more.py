@@ -7,23 +7,36 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('db', '0002_alter_player_email_alter_player_guild'),
+        ("db", "0002_alter_player_email_alter_player_guild"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='player',
-            name='guild',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='players', to='db.guild'),
+            model_name="player",
+            name="guild",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name="players",
+                to="db.guild",
+            ),
         ),
         migrations.AlterField(
-            model_name='player',
-            name='race',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='players', to='db.race'),
+            model_name="player",
+            name="race",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="players",
+                to="db.race",
+            ),
         ),
         migrations.AlterField(
-            model_name='skill',
-            name='race',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='skills', to='db.race'),
+            model_name="skill",
+            name="race",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="skills",
+                to="db.race",
+            ),
         ),
     ]
