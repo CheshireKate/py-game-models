@@ -20,7 +20,7 @@ def main() -> None:
         guild = None
         if player_data.get("guild"):
             guild_data = player_data["guild"]
-            guild, created = Guild.objects.get_or_create(
+            guild, _ = Guild.objects.get_or_create(
                 name=guild_data["name"],
                 defaults={"description": guild_data.get("description")},
             )
